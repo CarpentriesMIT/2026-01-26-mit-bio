@@ -34,6 +34,8 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 
 
 
+{% comment %}
+{% endcomment %}
 
 {% comment %}
 Check DC curriculum

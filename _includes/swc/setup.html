@@ -1,15 +1,19 @@
-{% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
+{% assign curricula = "swc-gapminder|swc-inflammation" | split: "|" %}
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
 
+{% if site.flavor == "python-google-colab" %}
+{% include install_instructions/googlecolab.html %}
+{% else %}
 {% include install_instructions/shell.html %}
 
-<br/>
+<br />
 <div class="alert alert-warning">
   <h4>Note for Windows Users</h4>
   <ul>
-    <li>If you have used <strong>Windows Subsystem for Linux ("WSL2")</strong> please open your Ubuntu bash terminal and follow the <strong>Linux</strong> instructions for each of the software packages below.</li>
+    <li>If you have used <strong>Windows Subsystem for Linux ("WSL2")</strong> please open your Ubuntu bash terminal and
+      follow the <strong>Linux</strong> instructions for each of the software packages below.</li>
     <li>If not, please follow the <strong>Windows</strong> instructions.</li>
   </ul>
 </div>
@@ -26,6 +30,7 @@
 {% include install_instructions/python.html %}
 {% else %}
 {% include warning-flavor.html %}
+{% endif %}
 {% endif %}
 
 {% comment %}
